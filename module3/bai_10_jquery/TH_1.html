@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<style>
+    #panel,
+    #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+    }
+
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            $("p").toggle();
+        });
+    });
+    $('button').ready(function () {
+        $('#a').click(function () {
+            var div = $("div");
+            div.animate({ left: '100px' }, "slow");
+            div.animate({ fontSize: '100px' }, "slow");
+            div.css('color', "red");
+            div.css('background-color', "greenyellow");
+        });
+    });
+
+    $(document).ready(function () {
+        $("#flip").click(function () {
+            $("#panel").slideDown("slow");
+        });
+    });
+</script>
+
+<body>
+
+    <body>
+        <p>Xin Chào!!!My name is Saluy.</p>
+        <button id="hide">Ẩn</button>
+        <button id="show">Hiện</button>
+    </body>
+    <hr>
+    <button id="a">Bắt Đầu</button>
+    <p>Saluy</p>
+    <div style="background:#2173bf;height:100px;width:200px;position:absolute;">Saluy</div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p id="flip">Click to slide down panel</p>
+    <p id="panel">Hello world!</p>
+</body>
+
+</html>

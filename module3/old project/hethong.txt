@@ -1,0 +1,68 @@
+Route
+    - get
+    Route::get('URI',[CONTROLLER::class,'METHOD'])->name('TEN_ROUTE');
+    - post
+    Route::post('URI',[CONTROLLER::class,'METHOD'])->name('TEN_ROUTE');
+    - resource
+    Route::resource('URI',CONTROLLER::class);
+    - prefix
+    Route::prefix('PREFIX')->group(function () {
+        
+    });
+    - middleware
+    Route::middleware(['MIDDLEWARE_NAME'])->group(function () {
+
+    });
+    - prefix + middleware
+    Route::group(['prefix' => 'PREFIX', 'middleware' => ['MIDDLEWARE_NAME']], function(){
+
+    });
+View
+    - truyen du lieu xuong View
+        + return view('greeting', ['name' => 'James']);
+        + return view('greeting')
+                ->with('name', 'Victoria')
+                ->with('occupation', 'Astronaut');
+        + return view('viewblade', compact('view1','view2','view3','view4'));
+        + composer
+Controller 
+    - resource Controller, URI:customers
+        + index                                 /customers                        GET             customers.index
+        + create                                /customers/create                 GET             customers.create
+        + store                                 /customers                        POST            customers.store
+        + edit                                  /customers/{id}/edit              GET             customers.edit
+        + update                                /customers/{id}                   PUT             customers.update
+        + show                                  /customers/{id}                   GET             customers.show
+        + destroy                               /customers/{id}                   DELETE          customers.destroy
+Model
+    - lay 1 ket qua theo khoa chinh
+        Customer::find(ID)
+    - lay tat car record
+        Customer::all()
+    - lay 1 ket qua theo dieu kien
+        Customer::where('COLUM_1','TOAN_TU','VALUE')->where('COLUM_1','TOAN_TU','VALUE')->first()
+    - lay nhieu ket qua theo dieu kien
+        Customer::where('COLUM_1','TOAN_TU','VALUE')->where('COLUM_1','TOAN_TU','VALUE')->get()
+    - insert du lieu
+        $customer = new Customer();
+        $customer->COLUM_1 = VALUE;
+        $customer->COLUM_2 = VALUE;
+        $customer->save();
+    - cap nhat du lieu
+        $customer = Customer::find(ID);
+        $customer->COLUM_1 = VALUE;
+        $customer->COLUM_2 = VALUE;
+        $customer->save();
+    - xoa du lieu
+        $customer = Customer::find(ID);
+        $customer->delete();
+Eloquent
+    - 1-1
+    - 1-N 
+    - N-N 
+Validate
+    - https://laravel.com/docs/9.x/validation#quick-writing-the-validation-logic
+    - https://laravel.com/docs/9.x/validation#manually-creating-validators
+    - https://laravel.com/docs/9.x/validation#creating-form-requests
+    - https://toidicode.com/validation-trong-laravel-8-phan-1-459.html
+

@@ -1,0 +1,30 @@
+<?php
+include '../db.php';
+interface libaryModel
+{
+    const A = '123';
+    function getAll();
+    function getId();
+    function getName();
+    function getDay();
+}
+class xem implements libaryModel
+{
+    function getAll()
+    {
+    }
+    function getId()
+    {
+    }
+    function getName()
+    {
+    }
+    function getDay()
+    {
+    }
+}
+abstract class Name
+{
+    public string
+      $fistname;
+}
